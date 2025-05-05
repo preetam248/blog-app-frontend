@@ -20,11 +20,8 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const data = new FormData();
-      data.append("email", formData.email)
-      data.append("password", formData.password)
       setLoading(true);
-      const res = await _loginUser(data);
+      const res = await _loginUser(formData);
       console.log("res", res);
       if (res.data.success) {
         const { user, token } = res.data;
