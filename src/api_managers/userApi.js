@@ -11,7 +11,7 @@ const registerUser = async (data) => {
 const _loginUser = async (data) => {
   return await AxiosInstance.post("/user/login", data, {
     headers: {
-      "Contain-Type": "application/json",
+      "Contain-Type": "multipart/formData",
     },
   });
 }
