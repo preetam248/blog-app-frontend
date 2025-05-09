@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
 import { StoreContext } from "../context/StoreContext";
@@ -26,30 +26,46 @@ const Navbar = () => {
 
         {/* center content */}
         <ul className="hidden sm:flex gap-5 text-xl font-normal justify-center items-center text-gray-700">
-          <Link
+          <NavLink
             to="/"
-            className="cursor-pointer hover:text-orange-500 duration-300"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-orange-500 duration-300 ${
+                isActive ? "text-orange-500" : ""
+              }`
+            }
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/blogs"
-            className="cursor-pointer hover:text-orange-500 duration-300"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-orange-500 duration-300 ${
+                isActive ? "text-orange-500" : ""
+              }`
+            }
           >
             Blogs
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/about"
-            className="cursor-pointer hover:text-orange-500 duration-300"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-orange-500 duration-300 ${
+                isActive ? "text-orange-500" : ""
+              }`
+            }
           >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/contact"
-            className="cursor-pointer hover:text-orange-500 duration-300"
+            className={({ isActive }) =>
+              `cursor-pointer hover:text-orange-500 duration-300 ${
+                isActive ? "text-orange-500" : ""
+              }`
+            }
           >
             Contact
-          </Link>
+          </NavLink>
         </ul>
 
         {user ? (
